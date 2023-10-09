@@ -86,7 +86,7 @@
   line-height: 17px;
 }
 
-@media screen and (max-width: 1279px) {
+@media screen and (max-width: 768px) {
   .about-project__title {
     width: calc(100% - 100px);
     margin-top: 90px;
@@ -103,7 +103,7 @@
   }
 }
 
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 450px) {
   .about-project__title {
     width: calc(100% - 36px);
     margin-top: 70px;

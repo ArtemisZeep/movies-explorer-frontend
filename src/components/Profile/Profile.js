@@ -6,7 +6,8 @@ const Profile = () => {
   return (
     <>
       <Header />
-      <div className="profile">
+      <main>
+      <section className="profile">
         <h2 className="profile__name">Привет, Виталий!</h2>
         <div className="profile__info-container">
           <h3 className="profile__info-name">Имя</h3>
@@ -29,7 +30,8 @@ const Profile = () => {
         </div>
         <button className="profile__edit">Редактировать</button>
         <button className="profile__signout">Выйти из аккаунта</button>
-      </div>
+      </section>
+    </main>
     </>
   );
 };

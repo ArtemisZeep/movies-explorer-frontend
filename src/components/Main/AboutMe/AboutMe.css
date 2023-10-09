@@ -79,8 +79,10 @@
 
 .about-me__photo {
   background: url(../../../images/AboutMePhoto.svg) no-repeat center;
-  min-width: 270px;
-  min-height: 327px;
+  max-width: 270px;
+  max-height: 327px;
+  width: 270px;
+  height: 327px;
 }
 
 .about-me__portfolio-title {
@@ -102,6 +104,9 @@
   margin: 0;
   margin-top: 20px;
   justify-content: space-between;
+  color: white;
+  text-decoration: none;
+  cursor: pointer;
 }
 
 .about-me__app {
@@ -114,7 +119,8 @@
 
 .about-me__arrow {
   background: url(../../../images/Arrow.svg) no-repeat center;
-  min-width: 29px;
+  max-width: 29px;
+  width: 29px;
 }
 
 .about-me__line_type_grey {
@@ -122,7 +128,7 @@
   background: #424242;
 }
 
-@media screen and (max-width: 1279px) {
+@media screen and (max-width: 768px) {
   .about-me {
     margin-top: 90px;
     margin-bottom: 90px;
@@ -165,8 +171,10 @@
   }
 
   .about-me__photo {
-    min-width: 255px;
-    min-height: 307px;
+    max-width: 255px;
+    max-height: 307px;
+    width: 255px;
+    height: 307px;
   }
 
   .about-me__link-to-github {
@@ -188,11 +196,12 @@
   }
 
   .about-me__arrow {
-    min-width: 27px;
+    max-width: 27px;
+    width: 27px;
   }
 }
 
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 450px) {
   .about-me {
     margin-top: 70px;
     margin-bottom: 70px;
@@ -214,8 +223,10 @@
   }
 
   .about-me__photo {
-    min-width: 292px;
-    min-height: 352px;
+    max-width: 292px;
+    max-height: 352px;
+    width: 292px;
+    height: 352px;
   }
 
   .about-me__info-text {
@@ -267,6 +278,7 @@
   }
 
   .about-me__arrow {
-    min-width: 18px;
+    max-width: 18px;
+    width: 18px;
   }
 }

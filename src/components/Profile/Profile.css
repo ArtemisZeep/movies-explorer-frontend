@@ -89,7 +89,7 @@
   padding: 0;
 }
 
-@media screen and (max-width: 1279px) {
+@media screen and (max-width: 768px) {
   .profile {
     margin-top: 236px;
   }
@@ -107,7 +107,7 @@
   }
 }
 
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 450px) {
   .profile {
     margin-top: 70px;
     width: 320px;

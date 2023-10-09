@@ -27,7 +27,7 @@
   opacity: 0.5;
 }
 
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 450px) {
   .navtab {
     gap: 6px;
     margin-bottom: 17px;

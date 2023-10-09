@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 const About = () => {
   return (
-    <div className="footer">
+    <footer className="footer">
       <h2 className="footer__copyright">
         Учебный проект Яндекс.Практикум х BeatFilm.
       </h2>
@@ -16,7 +16,7 @@ const About = () => {
           <a className="footer__link">Github</a>
         </div>
       </div>
-    </div>
+    </footer>
   );
 };
 

@@ -12,7 +12,7 @@
   border-radius: 20px;
 }
 
-@media screen and (max-width: 1279px) {
+@media screen and (max-width: 768px) {
   .profile__link-item {
     position: absolute;
     margin: 0 auto;
@@ -21,7 +21,7 @@
   }
 }
 
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 450px) {
   .profile__link-item {
     bottom: 46px;
   }

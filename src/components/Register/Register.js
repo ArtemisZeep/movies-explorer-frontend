@@ -5,23 +5,23 @@ import { useNavigate } from "react-router-dom";
 function Register() {
   const navigate = useNavigate();
   return (
-    <>
-      <div className="register">
+    <main>
+      <section className="register">
         <div className="register__logo" onClick={() => navigate("/")}></div>
         <h2 className="register__title">Добро пожаловать!</h2>
         <div className="register__input-container">
           <p className="register__input-name">Имя</p>
-          <input className="register__input" type="text"></input>
+          <input className="register__input" type="text" required placeholder="Имя"></input>
           <span className="register__input-error">Что-то пошло не так...</span>
         </div>
         <div className="register__input-container">
           <p className="register__input-name">E-mail</p>
-          <input className="register__input" type="text"></input>
+          <input className="register__input" type="text" required placeholder="E-mail"></input>
           <span className="register__input-error">Что-то пошло не так...</span>
         </div>
         <div className="register__input-container">
           <p className="register__input-name">Пароль</p>
-          <input className="register__input" type="password"></input>
+          <input className="register__input" type="password" required placeholder="Пароль"></input>
           <span className="register__input-error">Что-то пошло не так...</span>
         </div>
         <button className="register__button">Зарегестрироваться</button>
@@ -31,8 +31,8 @@ function Register() {
             Войти
           </a>
         </div>
-      </div>
-    </>
+      </section>
+    </main>
   );
 }
 

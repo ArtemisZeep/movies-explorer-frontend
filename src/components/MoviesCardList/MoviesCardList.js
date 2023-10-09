@@ -8,11 +8,11 @@ function MoviesCardList({ cards, saved, isLoading }) {
 
   function shownCount() {
     const display = window.innerWidth;
-    if (display > 1279) {
+    if (display > 1136) {
       setShownMovies(12);
-    } else if (display > 767) {
+    } else if (display < 1137) {
       setShownMovies(8);
-    } else if (display < 768) {
+    } else if (display < 728) {
       setShownMovies(6);
     }
   }
@@ -29,11 +29,11 @@ function MoviesCardList({ cards, saved, isLoading }) {
 
   function showMore() {
     const display = window.innerWidth;
-    if (display > 1279) {
+    if (display > 1136) {
       setShownMovies(shownMovies + 3);
-    } else if (display > 767) {
+    } else if (display < 1137) {
       setShownMovies(shownMovies + 2);
-    } else if (display < 768) {
+    } else if (display < 728) {
       setShownMovies(shownMovies + 1);
     }
   }

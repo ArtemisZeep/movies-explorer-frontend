@@ -40,7 +40,7 @@ const Header = () => {
       {!loggedIn ? (
         <header className="header">
           <div className="header__logo" onClick={() => navigate("/")}></div>
-          {width < 1279 ? (
+          {width < 769 ? (
             <div class="header__burger">
               <button
                 className="header__burger-button"
@@ -70,7 +70,7 @@ const Header = () => {
       ) : (
         <header className="header">
           <div className="header__logo" onClick={() => navigate("/")}></div>
-          {width < 1279 ? (
+          {width < 769 ? (
             <div class="header__burger">
               <button
                 className="header__burger-button"

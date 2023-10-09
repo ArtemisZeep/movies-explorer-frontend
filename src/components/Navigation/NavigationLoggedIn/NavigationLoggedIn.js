@@ -41,7 +41,7 @@ const NavigationLoggedIn = () => {
             }
             to="/saved-movies"
           >
-            Сохранённые
+            Сохранённые фильмы
           </NavLink>
         </li>
       </ul>

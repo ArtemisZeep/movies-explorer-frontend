@@ -21,10 +21,10 @@ const AboutMe = () => {
   });
 
   return (
-    <div className="about-me" id="student">
+    <section className="about-me" id="student">
       <h2 className="about-me__title">Студент</h2>
       <div className="about-me__line"></div>
-      {width > 767 ? (
+      {width > 450 ? (
         <div className="about-me__info">
           <div className="about-me__info-text">
             <h3 className="about-me__name">Виталий</h3>
@@ -72,21 +72,21 @@ const AboutMe = () => {
         </div>
       )}
       <h3 className="about-me__portfolio-title">Портфолио</h3>
-      <div className="about-me__app-container">
+      <a className="about-me__app-container" href="https://github.com/ArtemisZeep/how-to-learn" target="_blank">
         <a className="about-me__app">Статичный сайт</a>
         <div className="about-me__arrow"></div>
-      </div>
-      <div className="about-me__line about-me__line_type_grey"></div>
-      <div className="about-me__app-container">
+      </a>
+      <div className="about-me__line about-me__line_type_grey" ></div>
+      <a className="about-me__app-container" href="https://github.com/ArtemisZeep/russian-travel" target="_blank">
         <a className="about-me__app">Адаптивный сайт</a>
         <div className="about-me__arrow"></div>
-      </div>
+      </a>
       <div className="about-me__line about-me__line_type_grey"></div>
-      <div className="about-me__app-container">
+      <a className="about-me__app-container" href="https://github.com/ArtemisZeep/react-mesto-api-full-gha" target="_blank">
         <a className="about-me__app">Одностраничное приложение</a>
         <div className="about-me__arrow"></div>
-      </div>
-    </div>
+      </a>
+    </section>
   );
 };
 

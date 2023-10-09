@@ -23,7 +23,7 @@
   border-radius: 3px;
 }
 
-@media screen and (max-width: 1279px) {
+@media screen and (max-width: 768px) {
   .not-logged-in {
     position: relative;
     margin: auto;
@@ -40,7 +40,7 @@
   }
 }
 
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 450px) {
   .not-logged-in__list {
     margin-top: 144px;
     gap: 24px;

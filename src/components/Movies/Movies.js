@@ -10,11 +10,13 @@ const Movies = () => {
 
   return (
     <>
-      <Header />
+      <Header/>
+      <main>
       <SearchForm />
       <MoviesCardList cards={films} saved={false} isLoading={isLoading} />
+      </main>
       <Footer />
-    </>
+      </>
   );
 };
 

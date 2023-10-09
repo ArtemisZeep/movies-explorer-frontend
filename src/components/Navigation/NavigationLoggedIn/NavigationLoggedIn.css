@@ -24,7 +24,7 @@
   display: none;
 }
 
-@media screen and (max-width: 1279px) {
+@media screen and (max-width: 768px) {
   .logged-in__list {
     margin-top: 159px;
     width: auto;
@@ -39,7 +39,7 @@
   }
 }
 
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 450px) {
   .logged-in__list {
     margin-top: 144px;
     gap: 24px;

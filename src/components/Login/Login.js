@@ -5,18 +5,18 @@ import { useNavigate } from "react-router-dom";
 function Login() {
   const navigate = useNavigate();
   return (
-    <>
-      <div className="login">
+    <main>
+      <section className="login">
         <div className="login__logo" onClick={() => navigate("/")}></div>
         <h2 className="login__title">Рады видеть!</h2>
         <div className="login__input-container">
           <p className="login__input-name">E-mail</p>
-          <input className="login__input" type="text"></input>
+          <input className="login__input" type="text" required placeholder="E-mail"></input>
           <span className="login__input-error">Что-то пошло не так...</span>
         </div>
         <div className="login__input-container">
           <p className="login__input-name">Пароль</p>
-          <input className="login__input" type="password"></input>
+          <input className="login__input" type="password" required placeholder="Пароль"></input>
           <span className="login__input-error">Что-то пошло не так...</span>
         </div>
         <button className="login__button">Войти</button>
@@ -26,8 +26,8 @@ function Login() {
             Регистрация
           </a>
         </div>
-      </div>
-    </>
+      </section>
+    </main>
   );
 }
 
