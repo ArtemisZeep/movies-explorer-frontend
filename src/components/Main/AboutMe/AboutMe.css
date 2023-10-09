@@ -1,0 +1,272 @@
+.about-me {
+  margin-top: 100px;
+  margin-bottom: 125px;
+  background: #202020;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: white;
+}
+
+.about-me__title {
+  width: calc(100% - 140px);
+  margin: 0;
+  margin-bottom: 23px;
+  font-size: 22px;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: -0.88px;
+}
+
+.about-me__line {
+  width: calc(100% - 140px);
+  height: 1px;
+  background: white;
+}
+
+.about-me__info {
+  display: flex;
+  width: calc(100% - 140px);
+  justify-content: space-between;
+  margin-top: 66px;
+}
+
+.about-me__info-text {
+  display: flex;
+  flex-direction: column;
+  max-width: 600px;
+}
+
+.about-me__name {
+  font-size: 50px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 58px; /* 116% */
+  letter-spacing: -2px;
+  margin: 0;
+}
+
+.about-me__job-and-age {
+  font-feature-settings: "clig" off, "liga" off;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 20px;
+  margin: 0;
+  margin-top: 18px;
+}
+
+.about-me__description {
+  font-feature-settings: "clig" off, "liga" off;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 22px;
+  margin: 0;
+  margin-top: 26px;
+}
+
+.about-me__link-to-github {
+  color: white;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  text-decoration: none;
+  margin: 0;
+  margin-top: 99px;
+}
+
+.about-me__photo {
+  background: url(../../../images/AboutMePhoto.svg) no-repeat center;
+  min-width: 270px;
+  min-height: 327px;
+}
+
+.about-me__portfolio-title {
+  color: #8b8b8b;
+  font-feature-settings: "clig" off, "liga" off;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px;
+  width: calc(100% - 140px);
+  margin: 0;
+  margin-top: 101px;
+  margin-bottom: 30px;
+}
+
+.about-me__app-container {
+  width: calc(100% - 140px);
+  display: flex;
+  margin: 0;
+  margin-top: 20px;
+  justify-content: space-between;
+}
+
+.about-me__app {
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 50px;
+  letter-spacing: -1.2px;
+}
+
+.about-me__arrow {
+  background: url(../../../images/Arrow.svg) no-repeat center;
+  min-width: 29px;
+}
+
+.about-me__line_type_grey {
+  margin-top: 19px;
+  background: #424242;
+}
+
+@media screen and (max-width: 1279px) {
+  .about-me {
+    margin-top: 90px;
+    margin-bottom: 90px;
+  }
+
+  .about-me__title {
+    width: calc(100% - 100px);
+  }
+
+  .about-me__line {
+    width: calc(100% - 100px);
+  }
+
+  .about-me__info {
+    width: calc(100% - 100px);
+  }
+
+  .about-me__info-text {
+    max-width: 364px;
+  }
+
+  .about-me__name {
+    font-size: 40px;
+    font-weight: 400;
+    line-height: 40px; /* 100% */
+    letter-spacing: -1.6px;
+  }
+
+  .about-me__job-and-age {
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 18px;
+    margin-top: 16px;
+  }
+
+  .about-me__description {
+    font-size: 12px;
+    line-height: 18px; /* 150% */
+    margin-top: 20px;
+  }
+
+  .about-me__photo {
+    min-width: 255px;
+    min-height: 307px;
+  }
+
+  .about-me__link-to-github {
+    margin-top: 87px;
+  }
+
+  .about-me__portfolio-title {
+    width: calc(100% - 100px);
+    margin-top: 91px;
+  }
+
+  .about-me__app-container {
+    width: calc(100% - 100px);
+  }
+
+  .about-me__app {
+    font-size: 28px;
+    letter-spacing: -1.12px;
+  }
+
+  .about-me__arrow {
+    min-width: 27px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .about-me {
+    margin-top: 70px;
+    margin-bottom: 70px;
+  }
+
+  .about-me__title {
+    width: calc(100% - 28px);
+    margin-bottom: 28px;
+  }
+
+  .about-me__line {
+    width: calc(100% - 28px);
+  }
+
+  .about-me__info {
+    flex-direction: column;
+    width: calc(100% - 28px);
+    margin-top: 60px;
+  }
+
+  .about-me__photo {
+    min-width: 292px;
+    min-height: 352px;
+  }
+
+  .about-me__info-text {
+    margin-top: 40px;
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: -1.2px;
+  }
+
+  .about-me__job-and-age {
+    font-size: 11px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 16px;
+    margin-top: 20px;
+  }
+
+  .about-me__description {
+    font-feature-settings: "clig" off, "liga" off;
+    font-family: Inter;
+    font-size: 11px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 16px;
+  }
+
+  .about-me__link-to-github {
+    margin-top: 40px;
+  }
+
+  .about-me__portfolio-title {
+    width: calc(100% - 28px);
+    margin-top: 70px;
+    margin-bottom: 20px;
+  }
+
+  .about-me__app-container {
+    width: calc(100% - 28px);
+  }
+
+  .about-me__app {
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 28px; /* 155.556% */
+    letter-spacing: -0.72px;
+  }
+
+  .about-me__arrow {
+    min-width: 18px;
+  }
+}
