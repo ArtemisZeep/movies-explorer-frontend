@@ -17,7 +17,7 @@ const NavigationNotLoggedIn = () => {
         <li>
           <Link
             className="not-logged-in__link not-logged-in__link_type_login"
-            to="/signup"
+            to="/signin"
           >
             Войти
           </Link>

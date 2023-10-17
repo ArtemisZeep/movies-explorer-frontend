@@ -8,7 +8,6 @@ const AboutProject = () => {
   function getWidth() {
     const display = window.innerWidth;
     setWidth(display);
-    console.log(width);
   }
   useEffect(() => {
     getWidth();

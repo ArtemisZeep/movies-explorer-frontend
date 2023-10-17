@@ -6,15 +6,15 @@ import Techs from "./Techs/Techs";
 import AboutMe from "./AboutMe/AboutMe";
 import Footer from "../Footer/Footer";
 
-const Main = () => {
+const Main = (props) => {
   return (
     <>
-      <Header />
+      <Header loggedIn={props.loggedIn} />
       <main>
-      <Cover />
-      <AboutProject />
-      <Techs />
-      <AboutMe />
+        <Cover />
+        <AboutProject />
+        <Techs />
+        <AboutMe />
       </main>
       <Footer />
     </>

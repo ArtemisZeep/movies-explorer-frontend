@@ -5,13 +5,14 @@ import NavigationLoggedIn from "../Navigation/NavigationLoggedIn/NavigationLogge
 import NavigationNotLoggedIn from "../Navigation/NavigationNotLoggedIn/NavigationNotLoggedIn";
 import NavigationProfile from "../Navigation/NavigationProfile/NavigationProfile";
 
-const loggedIn = true;
 
-const Header = () => {
+
+const Header = (props) => {
   const [isClicked, setIsClicked] = useState(false);
   function handleOpen() {
     setIsClicked(true);
   }
+  const loggedIn = props.loggedIn
 
   function handleClose() {
     setIsClicked(false);
@@ -22,7 +23,7 @@ const Header = () => {
   function getWidth() {
     const display = window.innerWidth;
     setWidth(display);
-    console.log(width);
+
   }
   useEffect(() => {
     getWidth();
@@ -41,7 +42,7 @@ const Header = () => {
         <header className="header">
           <div className="header__logo" onClick={() => navigate("/")}></div>
           {width < 769 ? (
-            <div class="header__burger">
+            <div className="header__burger">
               <button
                 className="header__burger-button"
                 onClick={handleOpen}
@@ -71,7 +72,7 @@ const Header = () => {
         <header className="header">
           <div className="header__logo" onClick={() => navigate("/")}></div>
           {width < 769 ? (
-            <div class="header__burger">
+            <div className="header__burger">
               <button
                 className="header__burger-button"
                 onClick={handleOpen}
