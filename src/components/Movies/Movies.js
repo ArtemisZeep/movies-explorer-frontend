@@ -1,4 +1,5 @@
 import React from "react";
+import { useState, useEffect } from "react";
 import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
 import SearchForm from "../SearchForm/SearchForm";
@@ -12,9 +13,29 @@ const Movies = ({ loggedIn, savedMovies, handleLikeClick, onCardDelete }) => {
   const [initialMovies, setInitialMovies] = React.useState([]);
   const [filteredMovies, setFilteredMovies] = React.useState([]);
   const [isShortMovies, setIsShortMovies] = React.useState(false);
-
+  const [iniMovies, setIniMovies] = React.useState([]);
   const [isReqErr, setIsReqErr] = React.useState(false);
   const [isNotFound, setIsNotFound] = React.useState(false);
+  const [searchClick, setSearchClick] = React.useState(false);
+
+  function handleSearchClick() {
+    setSearchClick(true);
+  }
+
+  function handleInitialMovies() {
+    getMovies()
+      .then((movies) => {
+        localStorage.setItem("movies", JSON.stringify(movies));
+        setIniMovies(movies);
+      })
+      .catch((err) => {
+        console.log(`Возникла ошибка, ${err}`);
+      });
+  }
+
+  useEffect(() => {
+    handleInitialMovies();
+  }, []);
 
   function filterMovies(movies, query) {
     const moviesByQuery = movies.filter((movie) => {
@@ -112,7 +133,7 @@ const Movies = ({ loggedIn, savedMovies, handleLikeClick, onCardDelete }) => {
         setFilteredMovies(movies);
       }
     }
-  }, []);
+  }, [iniMovies]);
 
   React.useEffect(() => {
     if (localStorage.getItem("movieSearch")) {
@@ -134,6 +155,7 @@ const Movies = ({ loggedIn, savedMovies, handleLikeClick, onCardDelete }) => {
           onSearchMovies={onSearchMovies}
           onFilter={handleShortMovies}
           isShortMovies={isShortMovies}
+          handleSearchClick={handleSearchClick}
         />
         <MoviesCardList
           cards={filteredMovies}
@@ -144,6 +166,8 @@ const Movies = ({ loggedIn, savedMovies, handleLikeClick, onCardDelete }) => {
           isNotFound={isNotFound}
           handleLikeClick={handleLikeClick}
           onCardDelete={onCardDelete}
+          searchClick={searchClick}
+          setSearchClick={setSearchClick}
         />
       </main>
       <Footer />

@@ -67,12 +67,10 @@
   line-height: 12px;
   color: #ff4062;
   margin-top: 10px;
-  display: none;
+  
 }
 
-.register__input-error_active {
-  visibility: visible;
-}
+
 
 .register__button {
   margin: 0;
@@ -90,6 +88,11 @@
   border-radius: 3px;
   background: #4285f4;
   cursor: pointer;
+}
+
+.register__button_disabled {
+  cursor: default;
+  opacity: 0.3;
 }
 
 .register__already-container {

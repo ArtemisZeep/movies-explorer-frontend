@@ -1,8 +1,11 @@
 import React from "react";
 import "./NavigationLoggedIn.css";
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 
 const NavigationLoggedIn = () => {
+  const { pathname } = useLocation();
+  console.log(pathname);
+
   return (
     <nav className="logged-in">
       <ul className="logged-in__list">
@@ -17,6 +20,11 @@ const NavigationLoggedIn = () => {
           >
             Главная
           </NavLink>
+          {pathname === "/" ? (
+            <div className="logged-in__active-line"></div>
+          ) : (
+            ""
+          )}
         </li>
 
         <li className="logged-in__link-item">
@@ -30,6 +38,11 @@ const NavigationLoggedIn = () => {
           >
             Фильмы
           </NavLink>
+          {pathname === "/movies" ? (
+            <div className="logged-in__active-line"></div>
+          ) : (
+            ""
+          )}
         </li>
 
         <li className="logged-in__link-item">
@@ -43,6 +56,11 @@ const NavigationLoggedIn = () => {
           >
             Сохранённые фильмы
           </NavLink>
+          {pathname === "/saved-movies" ? (
+            <div className="logged-in__active-line"></div>
+          ) : (
+            ""
+          )}
         </li>
       </ul>
     </nav>

@@ -12,11 +12,11 @@ function MoviesCard({
 }) {
   function onCardClick() {
     if (saved) {
+      console.log("Not");
       onCardDelete(savedMovies.filter((m) => m.movieId === card.id)[0]);
-      console.log("saved");
     } else {
       handleLikeClick(card);
-      console.log("Not");
+      console.log("Saved");
     }
   }
 
@@ -59,7 +59,10 @@ function MoviesCard({
       ) : (
         <>
           {saved ? (
-            <button className="movies-card__saved-button"></button>
+            <button
+              className="movies-card__saved-button"
+              onClick={onCardClick}
+            ></button>
           ) : (
             <button
               className={"movies-card__save-button"}

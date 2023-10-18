@@ -14,7 +14,10 @@ function MoviesCardList({
   isNotFound,
   handleLikeClick,
   onCardDelete,
+  searchClick,
+  setSearchClick,
 }) {
+  const searchButton = document.getElementById("search-button");
   const [shownMovies, setShownMovies] = useState(0);
   const { pathname } = useLocation();
 
@@ -53,6 +56,14 @@ function MoviesCardList({
   function getSavedMovieCard(savedMovies, card) {
     return savedMovies.find((savedMovie) => savedMovie.movieId === card.id);
   }
+
+  useEffect(() => {
+    if (searchClick == true) {
+      shownCount();
+      setSearchClick(false);
+    } else {
+    }
+  }, [searchClick]);
 
   return (
     <section className="movies-card-list">
@@ -105,16 +116,22 @@ function MoviesCardList({
             </>
           )}
 
-          {cards.length > shownMovies ? (
-            <button
-              className="movies-card-list__button"
-              id="list-button"
-              onClick={showMore}
-            >
-              Ещё
-            </button>
-          ) : (
+          {pathname === "/saved-movies" ? (
             ""
+          ) : (
+            <>
+              {cards.length > shownMovies ? (
+                <button
+                  className="movies-card-list__button"
+                  id="list-button"
+                  onClick={showMore}
+                >
+                  Ещё
+                </button>
+              ) : (
+                ""
+              )}
+            </>
           )}
         </>
       )}

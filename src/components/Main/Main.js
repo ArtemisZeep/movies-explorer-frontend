@@ -6,10 +6,10 @@ import Techs from "./Techs/Techs";
 import AboutMe from "./AboutMe/AboutMe";
 import Footer from "../Footer/Footer";
 
-const Main = (props) => {
+const Main = ({ loggedIn }) => {
   return (
     <>
-      <Header loggedIn={props.loggedIn} />
+      <Header loggedIn={loggedIn} />
       <main>
         <Cover />
         <AboutProject />

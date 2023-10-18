@@ -36,6 +36,8 @@
   line-height: normal;
   text-decoration: none;
   cursor: pointer;
+  background: none;
+  border: none;
 }
 
 @media screen and (max-width: 768px) {

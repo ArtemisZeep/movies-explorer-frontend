@@ -5,14 +5,12 @@ import NavigationLoggedIn from "../Navigation/NavigationLoggedIn/NavigationLogge
 import NavigationNotLoggedIn from "../Navigation/NavigationNotLoggedIn/NavigationNotLoggedIn";
 import NavigationProfile from "../Navigation/NavigationProfile/NavigationProfile";
 
-
-
 const Header = (props) => {
   const [isClicked, setIsClicked] = useState(false);
   function handleOpen() {
     setIsClicked(true);
   }
-  const loggedIn = props.loggedIn
+  const loggedIn = props.loggedIn;
 
   function handleClose() {
     setIsClicked(false);
@@ -23,7 +21,6 @@ const Header = (props) => {
   function getWidth() {
     const display = window.innerWidth;
     setWidth(display);
-
   }
   useEffect(() => {
     getWidth();

@@ -16,6 +16,9 @@
   line-height: 18px;
 }
 
+
+
+
 .logged-in__link_active {
   font-weight: 500;
 }
@@ -23,6 +26,14 @@
 .logged-in__link_type_home {
   display: none;
 }
+.logged-in__active-line {
+  margin-top: 4px;
+  width:100%;
+  height: 2px;
+  background: white;
+}
+
+
 
 @media screen and (max-width: 768px) {
   .logged-in__list {
