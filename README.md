@@ -26,3 +26,5 @@ IP-адрес 84.201.167.122
 
 Backend https://api.artemiszeep.nomoredomainsrocks.ru
 Frontend https://artemiszeep.nomoredomainsrocks.ru
+Pull Request: https://github.com/ArtemisZeep/movies-explorer-frontend/pull/2
+GitHub Backend: https://github.com/ArtemisZeep/movies-explorer-api
