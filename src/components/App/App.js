@@ -22,6 +22,7 @@ import {
 } from "../../utils/MainApi";
 import { CurrentUserContext } from "../../contexts/CurentUserContext";
 import ProtectedRoute from "../ProtectedRoute/ProtectedRoute";
+import ProtectedRouteAuth from "../ProtectedRouteAuth/ProtectedRouteAuth";
 
 const App = () => {
   const navigate = useNavigate();
@@ -185,12 +186,22 @@ const App = () => {
           <Route
             path="/signup"
             element={
-              <Register handleRegister={handleRegister} loggedIn={loggedIn} />
+              <ProtectedRouteAuth
+                component={Register}
+                handleRegister={handleRegister}
+                loggedIn={loggedIn}
+              ></ProtectedRouteAuth>
             }
           />
           <Route
             path="/signin"
-            element={<Login handleLogin={handleLogin} loggedIn={loggedIn} />}
+            element={
+              <ProtectedRouteAuth
+                component={Login}
+                handleLogin={handleLogin}
+                loggedIn={loggedIn}
+              ></ProtectedRouteAuth>
+            }
           />
           <Route
             path="/profile"

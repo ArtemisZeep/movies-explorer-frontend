@@ -2,15 +2,12 @@ import React from "react";
 import { useLocation } from "react-router-dom";
 import "./SearchForm.css";
 
-const SearchForm = ({
-  onSearchMovies,
-  onFilter,
-  isShortMovies,
-  handleSearchClick,
-}) => {
+const SearchForm = ({ onSearchMovies, onFilter, isShortMovies, setSearchClick }) => {
   const [isQueryError, setIsQueryError] = React.useState(false);
   const [query, setQuery] = React.useState("");
   const location = useLocation();
+
+  
 
   function handleChangeQuery(evt) {
     setQuery(evt.target.value);
@@ -20,16 +17,11 @@ const SearchForm = ({
     evt.preventDefault();
     if (query.trim().length === 0) {
       setIsQueryError(true);
-      onSearchMovies(query);
-      if (location.pathname === "/movies") {
-        handleSearchClick();
-      }
+      
     } else {
       setIsQueryError(false);
       onSearchMovies(query);
-      if (location.pathname === "/movies") {
-        handleSearchClick();
-      }
+      setSearchClick(true)
     }
   }
 
@@ -55,10 +47,9 @@ const SearchForm = ({
           onChange={handleChangeQuery}
           value={query || ""}
         ></input>
-        <button
-          className="search-form__button_type_search"
-          type="submit"
-          name="search-button"
+        <button 
+        className="search-form__button_type_search"
+        type="submit"
         ></button>
       </div>
       <div className="search-form__filter">
@@ -67,7 +58,7 @@ const SearchForm = ({
             type="checkbox"
             name="checkboxName"
             className="search-form__checkbox"
-            onChange={onFilter}
+            onChange={onFilter} 
             checked={isShortMovies}
           ></input>
           <span className="search-form__slider search-form__round"></span>

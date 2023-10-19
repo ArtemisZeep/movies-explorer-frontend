@@ -105,8 +105,79 @@
   line-height: 12px;
   color: #ff4062;
   margin-top: 10px;
-  
+  margin-bottom: 10px;
 }
+
+
+.profile__popup {
+  position: fixed;
+  background: rgba(0, 0, 0, 0.5);
+  top: 0;
+  left: 0;
+  height: 100%;
+  padding: 0;
+  justify-content: center;
+  align-items: flex-end;
+  display: flex;
+  flex-direction: column;
+  opacity: 1;
+  transition: visibility 0.6s, opacity 0.6s ease;
+  visibility: visible;
+  width: 100%;
+  z-index: 10;
+}
+
+
+.profile__popup-container {
+  width: 50%;
+  height: 50%;
+  background: white;
+  position: relative;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.profile__popup-close {
+  position: absolute;
+  top: -40px;
+  right: -40px;
+  background: url(../../images/Close.svg) no-repeat center;
+  width: 50px;
+  height: 50px;
+
+  border: 0;
+  z-index: 10;
+}
+
+.profile__popup-text {
+  margin-top: 20%;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 80%;
+  text-align: center;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+
+.profile__popup-save{
+  width: 80%;
+  align-self: center;
+  margin-top: 10%;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  background:black;
+  color: #fff;
+  border: none;
+  padding-top: 2%;
+  padding-bottom: 2%;
+  border-radius: 4px;
+}
+
 
 @media screen and (max-width: 768px) {
   .profile {

@@ -16,7 +16,17 @@ const Profile = ({ isLogged, signOut, loggedIn, handleUpdateUser }) => {
   const [nameError, setNameError] = useState("start");
   const [disabledButton, setDisabledButton] = useState(true);
 
+  const [isClicked, setIsClicked] = useState(false);
+  function handleOpen() {
+    setIsClicked(true);
+  }
+
+  function handleClose() {
+    setIsClicked(false);
+  }
+
   const blurHandler = (event) => {
+    console.log(event.target.value)
     switch (event.target.name) {
       case "name":
         setNameDirty(true);
@@ -32,7 +42,11 @@ const Profile = ({ isLogged, signOut, loggedIn, handleUpdateUser }) => {
     setEmail(evt.target.value);
     const reg =
       /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|.(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-    if (evt.target.value.length == 0) {
+    
+      if(evt.target.value == currentUser.email){
+      setEmailError("Email не изменен");}
+      else {
+      if (evt.target.value.length == 0) {
       setEmailError("Email не может быть пустым");
     } else {
       if (!reg.test(String(evt.target.value).toLowerCase())) {
@@ -41,10 +55,13 @@ const Profile = ({ isLogged, signOut, loggedIn, handleUpdateUser }) => {
         setEmailError("");
       }
     }
-  }
+  }}
   function handleNameInput(evt) {
     blurHandler(evt);
     setName(evt.target.value);
+    if(evt.target.value == currentUser.name){
+      setNameError("Name не изменен");}
+      else {
     if (evt.target.value.length == 0) {
       setNameError("Имя не может быть пустым");
     } else {
@@ -58,7 +75,7 @@ const Profile = ({ isLogged, signOut, loggedIn, handleUpdateUser }) => {
         }
       }
     }
-  }
+  }}
 
   function handleDisableButton() {
     if (nameError == "" || emailError == "") {
@@ -85,6 +102,8 @@ const Profile = ({ isLogged, signOut, loggedIn, handleUpdateUser }) => {
     nameElement.value = data.name;
     evt.preventDefault();
     handleUpdateUser(data);
+    handleClose();
+    setDisabledButton(true);
   };
 
   React.useEffect(() => {
@@ -104,15 +123,17 @@ const Profile = ({ isLogged, signOut, loggedIn, handleUpdateUser }) => {
               className="profile__info-value"
               type="text"
               id="name"
+              name="name"
               placeholder={currentUser.name}
               value={name}
               required
               onChange={handleNameInput}
             ></input>
-            {nameDirty && nameError && (
+
+          </div>
+          {nameDirty && nameError && (
               <span className="profile__input-error">{nameError}</span>
             )}
-          </div>
           <div className="profile__line"></div>
           <div className="profile__info-container">
             <h3 className="profile__info-name">E-mail</h3>
@@ -120,29 +141,52 @@ const Profile = ({ isLogged, signOut, loggedIn, handleUpdateUser }) => {
               className="profile__info-value"
               type="text"
               id="email"
+              name="email"
               placeholder={currentUser.email}
               value={email}
               required
               onChange={handleEmailInput}
             ></input>
-            {emailDirty && emailError && (
+           
+          </div>
+          {emailDirty && emailError && (
               <span className="profile__input-error">{emailError}</span>
             )}
-          </div>
           {disabledButton == true ? (
-            <button className="profile__edit profile__edit-disable">
+            <button
+              className="profile__edit profile__edit-disable"
+              type="button"
+            >
               Редактировать
             </button>
           ) : (
-            <button className="profile__edit" type="submit">
-              Редактировать
-            </button>
+            <button className="profile__edit" type="button" onClick={handleOpen}>Редактировать</button>
           )}
 
           <button className="profile__signout" onClick={signOut}>
             Выйти из аккаунта
           </button>
+          {isClicked ? (
+          <div className="profile__popup">
+            <div className="profile__popup-container">
+              <p className="profile__popup-text">
+                Вы уверены, что хотите изменить данные профиля ?
+              </p>
+              <button className="profile__popup-save" type="submit">
+                Изменить
+              </button>
+              <button
+                className="profile__popup-close"
+                type="button"
+                onClick={handleClose}
+              ></button>
+            </div>
+          </div>
+        ) : (
+          ""
+        )}
         </form>
+        
       </main>
     </>
   );

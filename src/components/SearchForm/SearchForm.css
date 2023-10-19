@@ -36,6 +36,11 @@
   border: 0;
   cursor: pointer;
 }
+.search-form__button-active_type_search{
+  cursor: default;
+  opacity: 0.3;
+}
+
 .search-form__button_type_search:hover {
   opacity: 0.5;
 }

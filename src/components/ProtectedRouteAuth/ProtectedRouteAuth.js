@@ -2,8 +2,8 @@ import React from "react";
 import { Navigate } from "react-router-dom";
 
 function ProtectedRoute({ component: Component, ...props }) {
-
-  return props.isLogged ? <Component {...props} /> : <Navigate to="/" />;
+    console.log(props.isLogged)
+    return props.isLogged ? <Navigate to="/" /> : <Component {...props} /> ;
 }
 
 export default ProtectedRoute;

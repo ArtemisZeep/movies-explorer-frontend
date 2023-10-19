@@ -23,13 +23,14 @@ function MoviesCardList({
 
   function shownCount() {
     const display = window.innerWidth;
+    console.log(display)
     if (display > 1136) {
       setShownMovies(12);
+    } else if (display < 728) {
+      setShownMovies(5);
     } else if (display < 1137) {
       setShownMovies(8);
-    } else if (display < 728) {
-      setShownMovies(6);
-    }
+    } 
   }
 
   useEffect(() => {

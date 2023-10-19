@@ -9,7 +9,6 @@
 .movies-card-list__list {
   margin: 0;
   padding: 0;
-
   display: grid;
   row-gap: 58px;
   column-gap: 30px;
