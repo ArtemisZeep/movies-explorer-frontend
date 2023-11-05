@@ -78,11 +78,12 @@
 }
 
 .about-me__photo {
-  background: url(../../../images/AboutMePhoto.svg) no-repeat center;
+  background: url(../../../images/AboutMePhoto.png) no-repeat center;
   max-width: 270px;
   max-height: 327px;
   width: 270px;
   height: 327px;
+  background-size: cover;
 }
 
 .about-me__portfolio-title {
